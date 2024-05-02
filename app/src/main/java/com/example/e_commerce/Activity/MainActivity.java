@@ -16,11 +16,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,12 +65,22 @@ public class MainActivity extends BaseActivity {
         binding.viewpageSlider.setAdapter(new SliderAdapter(items,binding.viewpageSlider));
         binding.viewpageSlider.setClipToPadding(false);
         binding.viewpageSlider.setClipChildren(false);
-        binding.viewpageSlider.setOffscreenPageLimit(3);
+        binding.viewpageSlider.setOffscreenPageLimit(2);
         binding.viewpageSlider.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositePageTransformer=new CompositePageTransformer();
         compositePageTransformer.addTransformer(new MarginPageTransformer(40));
 
         binding.viewpageSlider.setPageTransformer(compositePageTransformer);
+        if (items.size() > 1) {
+            binding.dotsIndicator.setVisibility(View.VISIBLE);
+            binding.dotsIndicator.setViewPager2(binding.viewpageSlider);
+        } else {
+            binding.dotsIndicator.setVisibility(View.GONE);
+        }
+
+
+
+
     }
 }

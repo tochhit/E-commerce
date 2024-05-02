@@ -78,7 +78,7 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewpageSlider"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="150dp"
                     android:paddingStart="24dp"
                     android:paddingEnd="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -86,6 +86,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dotsIndicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"

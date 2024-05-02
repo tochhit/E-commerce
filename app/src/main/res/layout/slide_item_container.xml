@@ -3,7 +3,6 @@
     android:id="@+id/imageSlide"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="150dp"
-    android:scaleType="fitXY">
+    android:minHeight="150dp">
 
 </ImageView>

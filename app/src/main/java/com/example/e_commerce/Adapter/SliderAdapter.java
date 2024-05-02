@@ -52,7 +52,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
 
     @Override
     public int getItemCount() {
-        return sliderItems.size();
+        return Math.min(sliderItems.size(), 2);
     }
 
     public class SliderViewholder extends RecyclerView.ViewHolder {
