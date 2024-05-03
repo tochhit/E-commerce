@@ -14,14 +14,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="90dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -62,7 +63,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="160dp"
                 android:layout_marginTop="16dp">
 
                 <ProgressBar
@@ -78,7 +79,7 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewpageSlider"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="145dp"
                     android:paddingStart="24dp"
                     android:paddingEnd="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -108,8 +109,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -117,17 +118,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:text="Offical Brand"
                     android:textColor="@color/black"
-                    android:text="Offical Brand" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="See all"
-                    android:textColor="@color/purple"/>
+                    android:textColor="@color/purple" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -135,12 +136,11 @@
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/viewBrand"
+                    android:id="@+id/recyclerViewOfficial"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
                     android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -155,12 +155,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -168,17 +169,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:text="Recommendation"
                     android:textColor="@color/black"
-                    android:text="Recommendation" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="See all"
-                    android:textColor="@color/purple"/>
+                    android:textColor="@color/purple" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -189,6 +190,10 @@
                     android:id="@+id/viewPopular"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:layout_marginStart="8dp"
+                    android:paddingEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -233,8 +238,8 @@
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/btn_1" />
@@ -247,7 +252,7 @@
                         android:text="Explorer"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -258,8 +263,8 @@
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/btn_2" />
@@ -269,10 +274,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explorer"
+                        android:text="Cart"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -283,8 +288,8 @@
 
                     <ImageView
                         android:id="@+id/imageView6"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/btn_3" />
@@ -294,10 +299,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explorer"
+                        android:text="Wishlist"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -308,8 +313,8 @@
 
                     <ImageView
                         android:id="@+id/imageView7"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/btn_4" />
@@ -319,10 +324,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explorer"
+                        android:text="My Order"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -333,8 +338,8 @@
 
                     <ImageView
                         android:id="@+id/imageView8"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         app:srcCompat="@drawable/btn_5" />
@@ -344,10 +349,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explorer"
+                        android:text="Profile"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
