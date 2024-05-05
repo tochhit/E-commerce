@@ -1,5 +1,6 @@
 package com.example.e_commerce.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,13 +17,11 @@ import com.example.e_commerce.Adapter.SliderAdapter;
 import com.example.e_commerce.Domain.CategoryDomain;
 import com.example.e_commerce.Domain.ItemsDomain;
 import com.example.e_commerce.Domain.SliderItems;
-import com.example.e_commerce.R;
 import com.example.e_commerce.databinding.ActivityMainBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
 
@@ -39,6 +38,18 @@ public class MainActivity extends BaseActivity {
         initBanner();
         initCategory();
         initPopular();
+        bottomNavigation();
+
+    }
+
+    private void bottomNavigation() {
+        binding.cartBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,CartActivity.class)));
+        binding.explorerBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExplorerActivity.class)));
+        binding.wishlistBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, WishlistActivity.class)));
+        binding.myorderBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, MyOrderActivity.class)));
+        binding.profileBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ProfileActivity.class)));
+        binding.categorySeeAll.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExplorerActivity.class)));
+        binding.productSeeAll.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExplorerActivity.class)));
 
     }
 
@@ -140,8 +151,6 @@ public class MainActivity extends BaseActivity {
         if (items.size() > 1) {
             binding.dotsIndicator.setVisibility(View.VISIBLE);
             binding.dotsIndicator.setViewPager2(binding.viewpageSlider);
-        } else {
-            binding.dotsIndicator.setVisibility(View.GONE);
         }
 
 

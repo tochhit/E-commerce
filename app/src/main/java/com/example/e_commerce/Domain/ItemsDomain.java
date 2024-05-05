@@ -79,4 +79,7 @@ public class ItemsDomain implements Serializable {
     public void setNumberInCart(int numberInCart) {
         this.numberInCart = numberInCart;
     }
+
+
+
 }
