@@ -9,16 +9,16 @@
 
     <ImageView
         android:id="@+id/picC1"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/titleC1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:text="title"
         android:textAlignment="center" />
 </LinearLayout>

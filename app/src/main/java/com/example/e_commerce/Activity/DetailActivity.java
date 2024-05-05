@@ -1,11 +1,13 @@
 package com.example.e_commerce.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.e_commerce.Adapter.ColorAdapter;
+import com.example.e_commerce.Adapter.SizeAdapter;
 import com.example.e_commerce.Adapter.SliderAdapter;
 import com.example.e_commerce.Domain.ItemsDomain;
 import com.example.e_commerce.Domain.SliderItems;
@@ -31,6 +33,11 @@ public class DetailActivity extends BaseActivity {
         getBundles();
         banners();
         initLists();
+        bottomNavigation();
+    }
+
+    private void bottomNavigation() {
+        binding.cartBtn.setOnClickListener(v -> startActivity(new Intent(DetailActivity.this,CartActivity.class)));
     }
 
     private void initLists() {
@@ -39,7 +46,7 @@ public class DetailActivity extends BaseActivity {
         for (String size : object.getSize()) {
             sizeList.add(String.valueOf(size));
         }
-        binding.sizeList.setAdapter(new ColorAdapter(sizeList));
+        binding.sizeList.setAdapter(new SizeAdapter(sizeList));
         binding.sizeList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         // Initialize colorList
