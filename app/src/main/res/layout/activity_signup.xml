@@ -41,7 +41,9 @@
                 android:hint="Username"
                 android:drawableLeft="@drawable/baseline_person"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:maxLength="20"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -52,7 +54,8 @@
                 android:hint="Email"
                 android:drawableLeft="@drawable/baseline_email"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:singleLine="true"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -63,7 +66,8 @@
                 android:hint="Password"
                 android:drawableLeft="@drawable/baseline_lock"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:singleLine="true"/>
             <androidx.appcompat.widget.AppCompatButton
 
                 android:layout_width="match_parent"
@@ -84,6 +88,22 @@
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"
                 android:textColor="@color/black"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/googleBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/google" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

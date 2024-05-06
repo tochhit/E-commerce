@@ -2,6 +2,7 @@ package com.example.e_commerce.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -18,15 +19,23 @@ import com.example.e_commerce.Domain.CategoryDomain;
 import com.example.e_commerce.Domain.ItemsDomain;
 import com.example.e_commerce.Domain.SliderItems;
 import com.example.e_commerce.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
 
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     private ActivityMainBinding binding;
+    private FirebaseAuth auth;
+    private FirebaseFirestore firestore;
+    private ListenerRegistration userListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +43,44 @@ public class MainActivity extends BaseActivity {
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        auth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
+
 
         initBanner();
         initCategory();
         initPopular();
         bottomNavigation();
+        updateUI();
 
+    }
+
+    private void updateUI() {
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            DocumentReference docRef = firestore.collection("Users").document(user.getUid());
+
+            userListener = docRef.addSnapshotListener((documentSnapshot, e) -> {
+                if (e != null) {
+                    Log.e("MainActivity", "Listen failed.", e);
+                    return;
+                }
+
+                if (documentSnapshot != null && documentSnapshot.exists()) {
+                    String userName = documentSnapshot.getString("name");
+                    if (userName != null && !userName.isEmpty()) {
+                        binding.nameAcc.setText(userName);
+                        Log.d("MainActivity", "User's name: " + userName);
+                    } else {
+                        Log.d("MainActivity", "User's name is null or empty");
+                    }
+                } else {
+                    Log.d("MainActivity", "No such document");
+                }
+            });
+        } else {
+            Log.d("MainActivity", "User is not signed in");
+        }
     }
 
     private void bottomNavigation() {
@@ -156,5 +197,12 @@ public class MainActivity extends BaseActivity {
 
 
 
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (userListener != null) {
+            userListener.remove();
+        }
     }
 }
