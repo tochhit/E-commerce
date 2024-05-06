@@ -42,6 +42,8 @@ dependencies {
     implementation(libs.dotsindicator)
     implementation(libs.glide)
     implementation(libs.gson)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

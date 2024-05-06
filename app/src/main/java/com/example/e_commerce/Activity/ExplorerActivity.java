@@ -35,7 +35,7 @@ public class ExplorerActivity extends BaseActivity {
         binding= ActivityExplorerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setVarialbe();
+        setVariable();
         initCategory();
         initPopular();
 
@@ -44,29 +44,27 @@ public class ExplorerActivity extends BaseActivity {
 
     }
     private void initPopular() {
-        DatabaseReference myRef=database.getReference("Items");
+        DatabaseReference myRef = database.getReference("Items");
         binding.progressBarPopular.setVisibility(View.VISIBLE);
-        ArrayList<ItemsDomain> items = new ArrayList<>();
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-                    for(DataSnapshot issue:snapshot.getChildren()){
-                        items.add(issue.getValue(ItemsDomain.class));
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        ItemsDomain item = issue.getValue(ItemsDomain.class);
+                        allItems.add(item);
                     }
-                    if (!items.isEmpty()){
-                        binding.viewPopular.setLayoutManager(new GridLayoutManager(ExplorerActivity.this, 2));
-                        binding.viewPopular.setAdapter(new PopularAdapter(items));
-                    }
-                    binding.progressBarPopular.setVisibility(View.GONE);
+                    // Initially show all items
+                    filteredItems.addAll(allItems);
+                    setupPopularRecyclerView();
                 }
+                binding.progressBarPopular.setVisibility(View.GONE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 binding.progressBarPopular.setVisibility(View.GONE);
-
             }
         });
     }
@@ -103,11 +101,13 @@ public class ExplorerActivity extends BaseActivity {
             }
         });
     }
-    private void setVarialbe() {
+    private void setVariable() {
         binding.backBtn.setOnClickListener(v -> finish());
+
         binding.searchTxt.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -115,7 +115,8 @@ public class ExplorerActivity extends BaseActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
     }
     private void filterItems(String searchText) {
