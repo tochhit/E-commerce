@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity {
                 if (documentSnapshot != null && documentSnapshot.exists()) {
                     String userName = documentSnapshot.getString("name");
                     if (userName != null && !userName.isEmpty()) {
-                        binding.nameAcc.setText(userName);
+                        binding.nameuserTxt.setText(userName);
                         Log.d("MainActivity", "User's name: " + userName);
                     } else {
                         Log.d("MainActivity", "User's name is null or empty");

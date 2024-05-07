@@ -39,7 +39,7 @@
                         android:textColor="@color/grey" />
 
                     <TextView
-                        android:id="@+id/nameAcc"
+                        android:id="@+id/nameuserTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Chum Thouchhit"
