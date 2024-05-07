@@ -2,22 +2,19 @@ package com.example.e_commerce.Activity;
 
 import android.os.Bundle;
 
-import com.example.e_commerce.databinding.ActivityWishlistBinding;
+import com.example.e_commerce.databinding.ActivityCreditsCartBinding;
 
-public class WishlistActivity extends BaseActivity {
+public class CreditsCartActivity extends BaseActivity {
 
-    ActivityWishlistBinding binding;
+    ActivityCreditsCartBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= ActivityWishlistBinding.inflate(getLayoutInflater());
+        binding=ActivityCreditsCartBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setVarialbe();
-
-    }
-    private void setVarialbe() {
         binding.backBtn.setOnClickListener(v -> finish());
+
     }
 }

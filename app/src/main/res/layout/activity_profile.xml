@@ -125,7 +125,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <View
-                    android:id="@+id/view"
+                    android:id="@+id/viewLineProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="1dp"
                     android:layout_marginStart="10dp"
@@ -151,6 +151,7 @@
                 </TextView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardviewProflie"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="12dp"
@@ -158,13 +159,12 @@
                     app:cardElevation="20dp">
 
 
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="15dp"
                         android:layout_gravity="center_horizontal"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="15dp">
 
                         <TextView
                             android:id="@+id/myorderTxt"
@@ -180,12 +180,13 @@
                             android:textColor="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
+
                         <View
                             android:layout_width="wrap_content"
                             android:layout_height="1dp"
-                            android:background="@color/black"
                             android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/black" />
 
                         <TextView
                             android:id="@+id/wishlistTxt"
@@ -200,12 +201,13 @@
                             android:textColor="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
+
                         <View
                             android:layout_width="wrap_content"
                             android:layout_height="1dp"
-                            android:background="@color/black"
                             android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/black" />
 
                         <TextView
                             android:id="@+id/creditTxt"
@@ -220,12 +222,13 @@
                             android:textColor="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
+
                         <View
                             android:layout_width="wrap_content"
                             android:layout_height="1dp"
-                            android:background="@color/black"
                             android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/black" />
 
                         <TextView
                             android:id="@+id/addressTxt"
@@ -244,9 +247,9 @@
                         <View
                             android:layout_width="wrap_content"
                             android:layout_height="1dp"
-                            android:background="@color/black"
                             android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/black" />
 
                         <TextView
                             android:id="@+id/accsettingTxt"
@@ -261,12 +264,13 @@
                             android:textColor="@color/black"
                             android:textSize="18dp"
                             android:textStyle="bold" />
+
                         <View
                             android:layout_width="wrap_content"
                             android:layout_height="1dp"
-                            android:background="@color/black"
                             android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/black" />
 
                         <TextView
                             android:id="@+id/notificationTxt"

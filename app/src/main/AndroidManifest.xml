@@ -15,6 +15,18 @@
         android:theme="@style/Theme.Ecommerce"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.CreditsCartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AccSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.NotificationsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ForgetActivity"
             android:exported="false" />
         <activity
@@ -43,7 +55,9 @@
             android:exported="false" />
         <activity
             android:name=".Activity.IntroActivity"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

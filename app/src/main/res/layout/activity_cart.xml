@@ -154,7 +154,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView20" />
 
             <View
-                android:id="@+id/view"
+                android:id="@+id/viewLineProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
@@ -172,7 +172,7 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view" />
+                app:layout_constraintTop_toBottomOf="@+id/viewLineProfile" />
 
             <TextView
                 android:id="@+id/TotalTxt"

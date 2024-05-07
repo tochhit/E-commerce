@@ -91,6 +91,7 @@ public class MainActivity extends BaseActivity {
         binding.profileBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ProfileActivity.class)));
         binding.categorySeeAll.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExplorerActivity.class)));
         binding.productSeeAll.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ExplorerActivity.class)));
+        binding.notifiMainTxt.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NotificationsActivity.class)));
 
     }
 

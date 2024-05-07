@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MyOrderActivity">
+    tools:context=".Activity.AccSettingActivity">
 
     <TextView
         android:id="@+id/emptyTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Order is Empty"
+        android:text="Account Settings is Empty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Order"
+                android:text="Account Settings"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
