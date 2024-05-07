@@ -42,7 +42,7 @@
                         android:id="@+id/nameuserTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Chum Thouchhit"
+                        android:text="No User"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>

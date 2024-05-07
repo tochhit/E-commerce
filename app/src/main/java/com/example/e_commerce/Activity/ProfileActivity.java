@@ -43,19 +43,21 @@ public class ProfileActivity extends AppCompatActivity {
             DocumentReference docRef = firestore.collection("Users").document(user.getUid());
             docRef.get().addOnSuccessListener(documentSnapshot -> {
                 if (documentSnapshot.exists()) {
-                    // Display user's name and email
                     String userName = documentSnapshot.getString("name");
                     String email = documentSnapshot.getString("email");
                     binding.userName.setText(userName);
                     binding.emailTxt.setText(email);
+                    binding.logoutBtn.setText("Log Out");
                 } else {
                     Log.d("ProfileActivity", "No such document");
                 }
             }).addOnFailureListener(e -> Log.e("ProfileActivity", "Error fetching user data", e));
         } else {
             Log.d("ProfileActivity", "User is not signed in");
+            binding.logoutBtn.setText("Login Your Account");
         }
     }
+
 
     private void bottomNavigation() {
         binding.myorderTxt.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, MyOrderActivity.class)));
