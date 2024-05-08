@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.e_commerce.R;
 import com.example.e_commerce.databinding.ActivityIntroBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class IntroActivity extends AppCompatActivity {
+public class IntroActivity extends BaseActivity {
 
     private ActivityIntroBinding binding;
     private FirebaseAuth auth;

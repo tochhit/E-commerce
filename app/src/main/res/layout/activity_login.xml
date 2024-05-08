@@ -74,7 +74,8 @@
                 android:drawableLeft="@drawable/baseline_lock"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:inputType="textPassword"/>
             <TextView
                 android:id="@+id/forgetPass"
                 android:layout_width="wrap_content"

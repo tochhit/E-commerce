@@ -10,14 +10,16 @@
         android:id="@+id/pic"
         android:layout_width="164dp"
         android:layout_height="164dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/grey_bg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/shoes" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/favPic"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"

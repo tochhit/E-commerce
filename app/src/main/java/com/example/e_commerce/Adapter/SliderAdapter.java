@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.e_commerce.Domain.SliderItems;
 import com.example.e_commerce.R;
@@ -63,7 +63,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
         }
         void setImage(SliderItems sliderItems) {
             RequestOptions requestOptions=new RequestOptions();
-            requestOptions=requestOptions.transform(new CenterCrop());
+            requestOptions=requestOptions.transform(new FitCenter());
             Glide.with(context)
                     .load(sliderItems.getUrl())
                     .apply(requestOptions)

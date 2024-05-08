@@ -67,7 +67,8 @@
                 android:drawableLeft="@drawable/baseline_lock"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:inputType="textPassword"/>
             <androidx.appcompat.widget.AppCompatButton
 
                 android:layout_width="match_parent"
